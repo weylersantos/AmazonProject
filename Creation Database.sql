@@ -1,3 +1,5 @@
+-- Create database for storaging data from web scrapping
+
 CREATE TABLE Product_Information(
 	Position int,
 	Title varchar(200),
@@ -7,17 +9,4 @@ CREATE TABLE Product_Information(
 	Extraction_Date smalldatetime
 );
 
-SELECT * FROM Product_Information;
-
-TRUNCATE TABLE Product_Information;
-
-
-
-CREATE TABLE Test(
-	First_Name varchar(200),
-	Last_Name varchar(200)
-);
-INSERT INTO Test VALUES('Weyler', 'Santos');
-
-SELECT * FROM Test;
 
