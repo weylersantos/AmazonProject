@@ -1,4 +1,7 @@
--- Create database for storaging data from web scrapping
+-- Create database for storaging the datas come from web scrapping;
+CREATE DATABASE Amazon;
+
+USE Amazon
 
 CREATE TABLE Product_Information(
 	Position int,
@@ -9,4 +12,11 @@ CREATE TABLE Product_Information(
 	Extraction_Date smalldatetime
 );
 
-
+CREATE TRIGGER trg_time_insert     -- Trigger name
+ON dbo.ProductsInformation    -- Table name
+AFTER INSERT   -- Trigger Definition
+AS
+BEGIN
+    UPDATE dbo.ProductsInformation     -- What table will be update
+    SET Extraction_Date = GETDATE()  -- Defining value
+END;
